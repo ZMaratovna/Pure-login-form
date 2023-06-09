@@ -1,0 +1,49 @@
+@import "../../../styles/colors.scss";
+
+.form-group {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  input {
+    box-sizing: border-box;
+    width: inherit;
+    padding: 16px;
+    background: linear-gradient(
+        312.9deg,
+        $inputGradientStart 4.49%,
+        $inputGradientEnd 95.45%
+      ),
+      $inputBackground;
+    box-shadow: inset -3px -3px 10px $inputShadowLight,
+      inset 3px 3px 10px $inputShadowDark;
+    border-radius: 60px;
+    border: none;
+    outline: none;
+    &:focus {
+      border: 1px solid $inputFocusBorderColor;
+      cursor: text;
+    }
+    &::placeholder {
+      color: $textColor;
+    }
+    &.error {
+      border: 1px solid $error;
+    }
+    &.correct {
+      border: 1px solid $success;
+    }
+  }
+  &-label {
+    color: $textColor;
+    font-size: 12px;
+    padding: 4px;
+  }
+  &-error-msg {
+    color: $error;
+    font-size: 12px;
+    text-align: center;
+  }
+}

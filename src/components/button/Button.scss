@@ -1,0 +1,58 @@
+@import "../../styles/colors.scss";
+
+.btn {
+  padding: 16px;
+  background: $btnBackgroundColor;
+  color: $textColor;
+  box-shadow: -4px -2px 16px $btnShadowLightColor,
+    4px 2px 12px rgba(136, 165, 191, 0.54);
+  border-radius: 60px;
+  border: none;
+  outline: none;
+  position: relative;
+  &:hover,
+  &:active {
+    box-shadow: inset -4px -2px 16px $btnShadowLightColor,
+      inset 4px 2px 12px $shadowDarkColor;
+    cursor: pointer;
+  }
+  &:hover:disabled {
+    cursor: not-allowed;
+    box-shadow: -4px -2px 16px $btnShadowLightColor,
+      4px 2px 12px $shadowDarkColor;
+  }
+}
+
+.btn-text {
+  transition: all 0.2s;
+}
+
+.btn.loading .btn-text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: $btnShadowLightColor;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}

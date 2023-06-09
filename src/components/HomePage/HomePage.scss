@@ -1,0 +1,20 @@
+.home-page {
+  &-container {
+    height: 100vh;
+    background-image: linear-gradient(
+      299.64deg,
+      #c3d1e4 -0.02%,
+      #dde7f3 54.14%,
+      #d4e0ed 100.43%
+    );
+    color: #8f9bb2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-signout-btn {
+    padding: 15px 60px;
+    width: 300px;
+  }
+}

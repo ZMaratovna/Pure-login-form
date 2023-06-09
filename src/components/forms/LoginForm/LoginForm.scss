@@ -1,0 +1,61 @@
+@import "../../../styles/colors.scss";
+
+.login {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./../../../assets/img/background.jpg),
+    linear-gradient(
+      299.64deg,
+      $gradientStartColor -0.02%,
+      $gradientMedColor 54.14%,
+      $gradientEndColor 100.43%
+    );
+  background-size: cover;
+  background-blend-mode: multiply;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &-form {
+    width: 380px;
+    height: 380px;
+    background: linear-gradient(
+      180deg,
+      $formGradientStartColor 9.85%,
+      $gradientMedColor 53.92%,
+      $formGradientEndColor 100%
+    );
+    box-shadow: 12px 8px 16px $shadowDarkColor;
+    border-radius: 40px;
+    padding: 32px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 500;
+    color: $textColor;
+    &-title {
+      padding: 0;
+      margin-bottom: 0;
+    }
+    &-subtitle {
+      margin-bottom: 0;
+      margin-top: 0;
+      &.error {
+        color: $error;
+      }
+    }
+    &-fields {
+      flex: 1 1 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    &-button {
+      align-self: center;
+      width: 100%;
+    }
+  }
+}
