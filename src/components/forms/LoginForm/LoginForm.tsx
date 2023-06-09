@@ -72,7 +72,7 @@ export const LoginForm = ({ setToken }: ILoginProps): JSX.Element => {
           <TextField
             type={IFieldType.Email}
             value={email}
-            placeholder="john_doe@gmail.com"
+            placeholder=""
             label="Email"
             isValid={dirtyValidField(emailInfo)}
             isError={!emailInfo.isValid}
