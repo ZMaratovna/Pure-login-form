@@ -1,7 +1,7 @@
 # Simple App with Neuromorphic login page
 
 This project was bootstrapped with Create React App.\
-You can see login form implementation without using any UI libraries.\
+You can see login form implementation of react components without using any UI libraries.\
 Fetching of data will be mocked.
 
 ## Available Scripts
