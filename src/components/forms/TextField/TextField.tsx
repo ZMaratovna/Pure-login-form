@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 import { IFieldType, IValidation } from "../../../typings";
 
@@ -25,6 +26,25 @@ export const TextField = ({
   info,
   onChange,
 }: ITextFieldProps): JSX.Element => {
+  const [isHidePassword, setIsHidePassword] = useState(true);
+  const isPassword = type === IFieldType.Password;
+  const isShowEye = isPassword && !isHidePassword;
+  const isShowInvisibleEye = isPassword && isHidePassword;
+
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const getRef = () => (type === IFieldType.Password ? passwordRef : null);
+
+  const handlePasswordVisibility = () => {
+    setIsHidePassword(!isHidePassword);
+  };
+  useEffect(() => {
+    if (passwordRef?.current) {
+      passwordRef.current.type = !isHidePassword
+        ? IFieldType.Text
+        : IFieldType.Password;
+    }
+  }, [isHidePassword]);
+
   return (
     <div className="form-group">
       <label htmlFor={type} className="form-group-label">
@@ -38,7 +58,20 @@ export const TextField = ({
         onChange={onChange}
         value={value}
         required
+        ref={getRef()}
       />
+      {isShowEye && (
+        <AiOutlineEye
+          onClick={handlePasswordVisibility}
+          className={classNames("form-group-input-icon")}
+        />
+      )}
+      {isShowInvisibleEye && (
+        <AiOutlineEyeInvisible
+          onClick={handlePasswordVisibility}
+          className={classNames("form-group-input-icon", "active")}
+        />
+      )}
       {isError && <div className="form-group-error-msg">{info.message}</div>}
     </div>
   );

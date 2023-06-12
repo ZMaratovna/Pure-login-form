@@ -8,11 +8,11 @@ export const validateEmail = (value: string): IValidation => {
 
 export const validatePassword = (value: string): IValidation => {
   const isValid =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/.test(
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(
       value,
     );
   const message = isValid
     ? null
-    : "Min 8 and max 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character";
+    : "Min 6 characters, at least one uppercase letter, one lowercase letter, one number and one special character";
   return { value, isValid, message };
 };

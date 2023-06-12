@@ -15,6 +15,7 @@ export interface IValidation {
 export enum IFieldType {
   Email = "email",
   Password = "password",
+  Text = "text",
 }
 export enum IButtonType {
   Submit = "submit",
