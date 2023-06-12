@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Pure-login-form/static/css/main.c7d9edc2.css",
-    "main.js": "/Pure-login-form/static/js/main.f0d7a89d.js",
+    "main.css": "/Pure-login-form/static/css/main.40487af0.css",
+    "main.js": "/Pure-login-form/static/js/main.853a4880.js",
     "static/js/787.c592dac0.chunk.js": "/Pure-login-form/static/js/787.c592dac0.chunk.js",
     "static/media/background.jpg": "/Pure-login-form/static/media/background.22e08f25893b93e28545.jpg",
     "index.html": "/Pure-login-form/index.html",
-    "main.c7d9edc2.css.map": "/Pure-login-form/static/css/main.c7d9edc2.css.map",
-    "main.f0d7a89d.js.map": "/Pure-login-form/static/js/main.f0d7a89d.js.map",
+    "main.40487af0.css.map": "/Pure-login-form/static/css/main.40487af0.css.map",
+    "main.853a4880.js.map": "/Pure-login-form/static/js/main.853a4880.js.map",
     "787.c592dac0.chunk.js.map": "/Pure-login-form/static/js/787.c592dac0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c7d9edc2.css",
-    "static/js/main.f0d7a89d.js"
+    "static/css/main.40487af0.css",
+    "static/js/main.853a4880.js"
   ]
 }
