@@ -51,9 +51,11 @@ export const TextField = ({
         {label}
       </label>
       <input
+        id={type}
         className={classNames({ error: isError }, { correct: isValid })}
         type={type}
         name={type}
+        aria-label={type}
         placeholder={placeholder}
         onChange={onChange}
         value={value}
@@ -72,7 +74,11 @@ export const TextField = ({
           className={classNames("form-group-input-icon", "active")}
         />
       )}
-      {isError && <div className="form-group-error-msg">{info.message}</div>}
+      {isError && (
+        <div className="form-group-error-msg" role={`error-message-${type}`}>
+          {info.message}
+        </div>
+      )}
     </div>
   );
 };

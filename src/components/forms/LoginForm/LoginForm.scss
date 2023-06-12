@@ -34,6 +34,7 @@
     justify-content: space-between;
     font-weight: 500;
     color: $textColor;
+    text-align: center;
     &-title {
       padding: 0;
       margin-bottom: 0;
@@ -41,6 +42,7 @@
     &-subtitle {
       margin-bottom: 0;
       margin-top: 0;
+      text-align: center;
       &.error {
         color: $error;
       }

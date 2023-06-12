@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { Navigate } from "react-router-dom";
 import { useMemo, useState } from "react";
 
 import { useValidation } from "../../../hooks";
@@ -12,15 +13,17 @@ import "./LoginForm.scss";
 
 interface ILoginProps {
   setToken: (userToken: IToken) => void;
+  token?: string;
 }
 
-export const LoginForm = ({ setToken }: ILoginProps): JSX.Element => {
+export const LoginForm = ({ token, setToken }: ILoginProps): JSX.Element => {
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [emailInfo, pwdInfo] = useValidation(email, pwd);
 
   const [isFetching, setIsFetching] = useState(false);
   const [isFetchingError, setIsFetchingError] = useState(false);
+
   const isDisabled = !email || !pwd || !emailInfo.isValid || !pwdInfo.isValid;
 
   const dirtyValidField = (field: IValidation) =>
@@ -54,6 +57,10 @@ export const LoginForm = ({ setToken }: ILoginProps): JSX.Element => {
       ? "Ooops...These credentials are invalid!"
       : "Enter your credentials to access to your account";
   }, [isFetchingError]);
+
+  if (token) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className={classNames("login", { loading: isFetching })}>

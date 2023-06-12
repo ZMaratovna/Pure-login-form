@@ -25,6 +25,7 @@ export const Button = ({
   return (
     <button
       type={type}
+      data-testid={type}
       className={classNames(className, "btn", { loading: inProgress })}
       disabled={disabled}
       onClick={onClick}
